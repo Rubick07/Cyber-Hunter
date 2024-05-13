@@ -134,9 +134,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NodeObject: {fileID: 0}
-  Hovercolor: {r: 0.3509434, g: 0.3509434, b: 0.3509434, a: 0.6745098}
+  Hovercolor: {r: 0.5438262, g: 1, b: 0.33018857, a: 1}
   Okecolor: {r: 0.071706325, g: 0.554717, b: 0, a: 1}
   PathLayer:
     serializedVersion: 2
     m_Bits: 128
+  SebelahPlayer: 0
   Paths: []

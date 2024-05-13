@@ -24,6 +24,7 @@ public class ActionMenu : MonoBehaviour
         gameManager.Phase++;
         gameManager.Action = "Attack";
         gameManager.PlayerNode.NodeCheckSebelahPlayer();
+        
         Debug.Log("Attack");
     }
 
@@ -32,7 +33,7 @@ public class ActionMenu : MonoBehaviour
         gameManager.Phase++;
         gameManager.Action = "Dive";
         Node[] nodes = FindObjectsOfType<Node>();
-        gameManager.PlayerNode.NodeCheckSebelahPlayer();
+        gameManager.PlayerNode.NodeCheckSebelahPlayerDIVE();
 
         Debug.Log("Dive");
     }
