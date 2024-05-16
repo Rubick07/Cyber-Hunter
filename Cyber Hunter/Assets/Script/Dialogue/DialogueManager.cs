@@ -33,6 +33,8 @@ public class DialogueManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+
     public void StartDialogue(Dialogue dialogue)
     {
         //Debug.Log("Starting Conversation with" + dialogue.name);

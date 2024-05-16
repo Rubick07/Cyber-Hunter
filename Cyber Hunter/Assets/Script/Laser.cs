@@ -9,36 +9,87 @@ public class Laser : MonoBehaviour
 
     LineRenderer lineRenderer;
     public LayerMask Target;
-    bool sumber;
-
+    public bool sumber;
+    RaycastHit2D hit;
     void Start()
     {
         lineRenderer = GetComponent<LineRenderer>();
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-
         lineRenderer.SetPosition(0, LaserOrigin.position);
 
-        RaycastHit2D hit = Physics2D.Raycast(LaserOrigin.position, transform.right, 100f, Target);
+         hit = Physics2D.Raycast(LaserOrigin.position, transform.right, 100f, Target);
 
         Vector3 RayOrigin = transform.position;
+       
 
-        if(hit.collider != null)
+        if(sumber == true)
         {
-            lineRenderer.enabled = true;
-            //Debug.Log("Ada");
-            lineRenderer.SetPosition(1, hit.point);
-        }
-        else 
+            lineRenderer.SetPosition(1, transform.right * 100);
+            //Debug.Log(hit);
+            if (hit.collider != null)
+            {
+                lineRenderer.enabled = true;
+                //Debug.Log("Ada");
+                lineRenderer.SetPosition(1, hit.point);
+                if (hit.collider.GetComponent<Laser>()){
+                    Laser laser = hit.collider.GetComponent<Laser>();
+                    LineRenderer line = hit.collider.GetComponent<LineRenderer>();
+                    line.enabled = true;
+
+                    laser.enabled = true;
+                }
+                else
+                {
+                    Laser laser = hit.collider.GetComponentInParent<Laser>();
+                    LineRenderer line = hit.collider.GetComponentInParent<LineRenderer>();
+                    line.enabled = false;
+                    laser.enabled = false;
+                }
+
+            }
+
+        }   
+        else
         {
-            lineRenderer.enabled = false;
+            if (hit.collider != null)
+            {
+                lineRenderer.SetPosition(1, hit.point);
+                if (hit.collider.GetComponent<Laser>())
+                {
+                    Laser laser = hit.collider.GetComponent<Laser>();
+                    LineRenderer line = hit.collider.GetComponent<LineRenderer>();
+                    line.enabled = true;
+
+                    laser.enabled = true;
+                }
+                else
+                {
+                    Laser laser = hit.collider.GetComponentInParent<Laser>();
+                    LineRenderer line = hit.collider.GetComponentInParent<LineRenderer>();
+                    line.enabled = false;
+                    laser.enabled = false;
+                }
+            }
+            else 
+            {
+            //lineRenderer.enabled = false;
             //Debug.Log("Tidak Ada");
-            //lineRenderer.SetPosition(1, transform.right * 100);
+            lineRenderer.SetPosition(1, transform.right * 100);
+
+            }
+            
         }
+        
+        
+
 
     }
+
+
+
+
 }

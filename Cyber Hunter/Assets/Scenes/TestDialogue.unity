@@ -751,7 +751,7 @@ MonoBehaviour:
     CharacterImage: {fileID: 21300000, guid: e5bca0530a5e1fb48a75080b4b8f300c, type: 3}
     sentences:
     - Kono yarooo
-    - niga
+    - nice gan
   - name: Pho
     CharacterImage: {fileID: 21300000, guid: 35803db3215eb264cb105be0f8e0ab1d, type: 3}
     sentences:
