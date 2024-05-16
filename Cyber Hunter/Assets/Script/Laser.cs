@@ -10,7 +10,9 @@ public class Laser : MonoBehaviour
     LineRenderer lineRenderer;
     public LayerMask Target;
     public bool sumber;
+    public float CountDown;
     RaycastHit2D hit;
+
     void Start()
     {
         lineRenderer = GetComponent<LineRenderer>();

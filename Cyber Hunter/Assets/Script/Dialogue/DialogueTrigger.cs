@@ -26,6 +26,11 @@ public class DialogueTrigger : MonoBehaviour
             index++;
             TriggerDialogue();
         }
+        
+        else
+        {
+            DialogueManager.Instance.TurnOffTxtBox();
+        }
 
     }
 

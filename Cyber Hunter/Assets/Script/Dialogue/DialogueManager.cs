@@ -11,6 +11,7 @@ public class DialogueManager : MonoBehaviour
     public SpriteRenderer Character;
     public TMP_Text nameText;
     public TMP_Text DialogueText;
+    public Button DialogueButton;
     public static DialogueManager Instance;
     public delegate void NextDialogue();
     public NextDialogue DialogueSelanjutnyaPunyaManager;
@@ -37,11 +38,11 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
-        //Debug.Log("Starting Conversation with" + dialogue.name);
 
+        DialogueButton.image.enabled = true;
+        //DialogueButton.enabled = true;
         nameText.text = dialogue.name;
         Character.sprite = dialogue.CharacterImage;
-        Character.color = new Color(255, 255, 255, 1f);
         sentences.Clear();
 
         foreach (string sentence in dialogue.sentences)
@@ -74,19 +75,27 @@ public class DialogueManager : MonoBehaviour
         foreach(char letter in sentence.ToCharArray())
         {
             DialogueText.text += letter;
-            yield return null;
+            yield return new WaitForSeconds(0.01f);
         }
     }
     
     public void EndDialogue()
     {
         Debug.Log("End Dialogue");
-        Character.color = new Color(255, 255, 255, 0.5f);
+        //Character.color = new Color(255, 255, 255, 0.5f);
+        DialogueButton.image.enabled = false;
+        DialogueText.text = "";
+        nameText.text = "";
         DialogueSelanjutnyaPunyaManager?.Invoke();
-        //Character.color.a = 
+
     }
 
-
+    public void TurnOffTxtBox()
+    {
+        DialogueButton.image.enabled = false;
+        DialogueText.text = "";
+        nameText.text = "";
+    }
 
 
         
