@@ -16,7 +16,8 @@ public class GameManager : MonoBehaviour
     public string Action;
     public Node PlayerNode;
     public Node DiveNode;
-
+    [Header("Static")]
+    public static GameManager Instance;
     int oke = 0;
     void Start()
     {
@@ -35,7 +36,18 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    
+    private void Awake()
+    {
+        if(Instance == null)
+        {
+            Instance = this;
+
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     void Update()
     {
         //Phase 0 = check buff
@@ -152,5 +164,6 @@ public class GameManager : MonoBehaviour
             node.SebelahPlayer = false;
         }
     }
+
 
 }

@@ -5,26 +5,33 @@ using UnityEngine;
 public class Buff : MonoBehaviour
 {
     public int BuffNumber;
-    
+    /*
+     Note
+    0 = Chatlog
+    1 = VoiceLog
+    2 = Digital Trail
+    3 = SpareEnergyBox
+     */
     public void ChatLog()
     {
-        GameManager gameManager = FindObjectOfType<GameManager>();
-        gameManager.Phase = 5;
+        GameManager.Instance.Phase = 5;
+        //gameManager.Phase = 5;
         Debug.Log("ChatLog");
     }
 
     public void VoiceLog()
     {
-        GameManager gameManager = FindObjectOfType<GameManager>();
-        gameManager.MaxTurn += 3;
+        //GameManager gameManager = FindObjectOfType<GameManager>();
+        //gameManager.MaxTurn += 3;
+        GameManager.Instance.MaxTurn += 3;
         Debug.Log("VoiceLog");
     }
 
     public void DigitalTrail()
     {
-        GameManager gameManager = FindObjectOfType<GameManager>();
-        gameManager.DoubleTurn = true;
-
+        //GameManager gameManager = FindObjectOfType<GameManager>();
+        //gameManager.DoubleTurn = true;
+        GameManager.Instance.DoubleTurn = true;
         Debug.Log("DigitalTrail");
     }
 

@@ -15,4 +15,6 @@ public class MainMenu : MonoBehaviour
         Debug.Log("Keluar");
         Application.Quit();
     }
+
+
 }
