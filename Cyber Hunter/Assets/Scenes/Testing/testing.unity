@@ -1160,7 +1160,7 @@ PrefabInstance:
     - target: {fileID: 6540667069693199122, guid: 4418e0d1f80ae164f926a3d7de566940, type: 3}
       propertyPath: NodeObject
       value: 
-      objectReference: {fileID: 958413031}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1216,7 +1216,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &958413032
 Transform:
   m_ObjectHideFlags: 0
@@ -1245,6 +1245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: dfe47ccf8cca6194d906213d055a5cb8, type: 2}
+  damage: 0
 --- !u!212 &958413034
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1462,6 +1463,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: dfe47ccf8cca6194d906213d055a5cb8, type: 2}
+  damage: 0
 --- !u!212 &982717181
 SpriteRenderer:
   m_ObjectHideFlags: 0

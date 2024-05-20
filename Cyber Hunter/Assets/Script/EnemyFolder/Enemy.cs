@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     public Stats stats;
     GameManager gameManager;
     int HP;
-    int damage;
+    public int damage;
 
     private void Start()
     {
@@ -37,6 +37,11 @@ public class Enemy : MonoBehaviour
         }
 
         Debug.Log(HP);
+    }
+
+    public void EnemyMovement()
+    {
+
     }
 
 }

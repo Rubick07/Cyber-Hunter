@@ -93,6 +93,11 @@ public class GameManager : MonoBehaviour
 
             }
 
+            foreach(Node Enemy in EnemyNode)
+            {
+                Enemy.EnemyCariJalan();
+            }
+
             oke = 1;
             Phase++;
         }

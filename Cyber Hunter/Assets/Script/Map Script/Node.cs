@@ -17,13 +17,15 @@ public class Node : MonoBehaviour
     private Color Startcolor;
     private Renderer rend;
     private Node ThisNode;
-
+    private List<Node> NodesYangLewat = new List<Node>();
+    private Node NodePlayer;
     private void Start()
     {
         gameManager = FindAnyObjectByType<GameManager>().GetComponent<GameManager>();
         ThisNode = GetComponent<Node>();
         rend = GetComponent<Renderer>();
         Startcolor = rend.material.color;
+
 
         //biar rapi objectnya ditengah node
         if (NodeObject != null)
@@ -231,6 +233,97 @@ public class Node : MonoBehaviour
 
     }
 
+    
+    public bool EnemyMovement(Node CurrNode)
+    {
+        NodesYangLewat.Add(CurrNode);
+        //Debug.Log("Saya rekursif");
+        Debug.Log(CurrNode);
+        if(CurrNode.NodeObject != null)
+        {
+            if (CurrNode.NodeObject.GetComponent<Player>())
+            {
 
+                Debug.Log(CurrNode + "saya player");
+                return true;
+            }
+
+        }
+        /*
+        if(CurrNode.NodeObject == null)
+        {
+            Debug.Log(CurrNode + "Isinya kosong");
+        }
+        */
+        
+           foreach(Path pathEach in CurrNode.Paths)
+           {
+            Debug.Log(CurrNode + "" + pathEach);
+
+                foreach (Node nodeInPath in pathEach.Nodes)
+                {                    
+                    if (nodeInPath.gameObject != gameObject)
+                    {
+                        if (NodesYangLewat.Contains(nodeInPath))
+                        {
+                        Debug.Log(CurrNode + "Block" + nodeInPath);
+
+                        continue;
+                        }
+                        else if(EnemyMovement(nodeInPath))
+                        {
+
+                            Debug.Log("iya");
+                            NodePlayer = nodeInPath;
+                            Debug.Log(NodePlayer);
+                            
+
+                            return true;
+                        }
+
+                    }
+                }
+
+           }
+
+        return false;
+    }
+    
+
+
+    public void EnemyCariJalan()
+    {
+
+        NodesYangLewat.Clear();               
+        NodePlayer = null;
+        //Debug.Log
+        EnemyMovement(ThisNode);
+        Debug.Log(NodePlayer);
+        if(NodePlayer != null)
+        {
+            if(NodePlayer.NodeObject != null)
+            {
+                if (NodePlayer.NodeObject.GetComponent<Player>())
+                {
+                    Player player = NodePlayer.NodeObject.GetComponent<Player>();
+                    Enemy enemy = ThisNode.NodeObject.GetComponent<Enemy>();
+                    player.TakeDamage(enemy.damage);
+                    Destroy(ThisNode.NodeObject);
+                    ThisNode.NodeObject = null;
+                }
+            }
+            else if (NodePlayer.NodeObject == null)
+            {
+
+                    NodePlayer.NodeObject = ThisNode.NodeObject;
+                    ThisNode.NodeObject.transform.position = NodePlayer.gameObject.transform.position;
+                    ThisNode.NodeObject = null;
+                
+            }
+
+        }
+
+
+    }
 
 }
