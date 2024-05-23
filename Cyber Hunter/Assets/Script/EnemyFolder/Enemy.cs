@@ -19,15 +19,6 @@ public class Enemy : MonoBehaviour
         damage = stats.damage;
     }
 
-    void Update()
-    {
-        if(gameManager.Phase == 4)
-        {
-            //Debug.Log("Enemy Turn!");
-        }
-
-    }
-
     public void Takedamage(int damage)
     {
         HP-= damage;        
@@ -39,9 +30,5 @@ public class Enemy : MonoBehaviour
         Debug.Log(HP);
     }
 
-    public void EnemyMovement()
-    {
-
-    }
 
 }

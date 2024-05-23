@@ -17,10 +17,12 @@ public class Rotate : MonoBehaviour
 
         if (Input.GetKey(KeyCode.A))
         {
+            //Rotation = Vector3.up;
             Rotation.z = 1;
         }
         else if (Input.GetKey(KeyCode.D))
         {
+            //Rotation = Vector3.down;
             Rotation.z = -1;
         }
         else

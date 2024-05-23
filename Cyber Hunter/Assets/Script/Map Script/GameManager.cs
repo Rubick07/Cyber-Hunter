@@ -151,11 +151,11 @@ public class GameManager : MonoBehaviour
     {
         if(tanda == 0)
         {
-            Instantiate(MiniGamesFinish, transform);
+            Instantiate(MiniGamesFinish, PlayerNode.transform);
         }
         else if(tanda == 1)
         {
-            Instantiate(MiniGamesFireWall, transform);
+            Instantiate(MiniGamesFireWall, PlayerNode.transform);
         }
 
     }

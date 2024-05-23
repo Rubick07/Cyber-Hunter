@@ -25,4 +25,5 @@ public class MiniGames : MonoBehaviour
         gameManager.PlayerTurnEnd();
         Destroy(gameObject);
     }
+
 }
