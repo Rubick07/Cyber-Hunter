@@ -7,6 +7,7 @@ public class Rotate : MonoBehaviour
     private bool BisaRotate = false;
     [SerializeField] private Vector3 Rotation;
     [SerializeField] private float RotateSpeed;
+    public GameObject Tanda;
 
     private void Update()
     {
@@ -38,6 +39,15 @@ public class Rotate : MonoBehaviour
     {
         Debug.Log("Masuk");
         BisaRotate = !BisaRotate;
+        if(BisaRotate == true)
+        {
+            Tanda.SetActive(true);
+        }
+        else
+        {
+            Tanda.SetActive(false);
+        }
+
     }
 
 }

@@ -13,12 +13,14 @@ public class GameManager : MonoBehaviour
     public GameObject ActionMenu;
     public GameObject MiniGamesFireWall;
     public GameObject MiniGamesFinish;
+    public GameObject StageClearUI;
     public string Action;
     public Node PlayerNode;
     public Node DiveNode;
     [Header("Static")]
     public static GameManager Instance;
     int oke = 0;
+
     void Start()
     {
         Phase = 0;
@@ -149,13 +151,16 @@ public class GameManager : MonoBehaviour
 
     public void MiniGamesStart(int tanda)
     {
+        GameObject MinigamesGroup;
         if(tanda == 0)
         {
-            Instantiate(MiniGamesFinish, PlayerNode.transform);
+           MinigamesGroup = Instantiate(MiniGamesFinish, PlayerNode.transform);
+           MinigamesGroup.transform.SetParent(null);
         }
         else if(tanda == 1)
         {
-            Instantiate(MiniGamesFireWall, PlayerNode.transform);
+          MinigamesGroup =  Instantiate(MiniGamesFireWall, PlayerNode.transform);
+          MinigamesGroup.transform.SetParent(null);
         }
 
     }
@@ -168,6 +173,11 @@ public class GameManager : MonoBehaviour
 
             node.SebelahPlayer = false;
         }
+    }
+
+    public void StageClear()
+    {
+        Instantiate(StageClearUI);
     }
 
 

@@ -82,6 +82,7 @@ public class DialogueManager : MonoBehaviour
     public void EndDialogue()
     {
         Debug.Log("End Dialogue");
+        StopAllCoroutines();
         //Character.color = new Color(255, 255, 255, 0.5f);
         DialogueButton.image.enabled = false;
         DialogueText.text = "";

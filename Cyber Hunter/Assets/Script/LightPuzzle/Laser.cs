@@ -67,6 +67,17 @@ public class Laser : MonoBehaviour
                         NyalainLaser();
                     }
 
+                    else if (hit.collider.GetComponent<LightGoal>())
+                    {
+                        Debug.Log("menang");
+                        MiniGames miniGames = FindAnyObjectByType<MiniGames>();
+                        StartCoroutine(miniGames.ClearStage());
+                    }
+                    else
+                    {
+                        lineRenderer.SetPosition(1, hit.point);
+                    }
+
                 }
                 else 
                 {

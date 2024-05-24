@@ -10,6 +10,12 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(Stage);
     }
 
+    public void NextScene()
+    {
+        Debug.Log(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
     public void QuitGame()
     {
         Debug.Log("Keluar");

@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue[] dialogue;
+    public GameObject button;
     int index = 0;
 
 
@@ -30,6 +33,12 @@ public class DialogueTrigger : MonoBehaviour
         else
         {
             DialogueManager.Instance.TurnOffTxtBox();
+            if(PlayerPrefs.GetInt("LevelAt") < SceneManager.GetActiveScene().buildIndex)
+            {
+                PlayerPrefs.SetInt("LevelAt", SceneManager.GetActiveScene().buildIndex);
+
+                button.SetActive(true);
+            }
         }
 
     }

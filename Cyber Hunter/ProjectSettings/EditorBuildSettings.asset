@@ -18,11 +18,17 @@ EditorBuildSettings:
     path: Assets/Scenes/Select Level.unity
     guid: f66cd80c2cd1087448df77f73a5759b9
   - enabled: 1
+    path: Assets/Scenes/Level/Prologue.unity
+    guid: f3db2b178b73483449fc733b29b2ce1d
+  - enabled: 1
     path: Assets/Scenes/Level/Tutorial.unity
-    guid: 3b8cb3a1e6108684d8e9b3431ba1ffa1
+    guid: e55478f14d6d7894b96ac8c8241950ad
+  - enabled: 1
+    path: Assets/Scenes/Dialog/DialogAfterS1.unity
+    guid: f1e2791af329a7b4a9e56c51c4b6c954
   - enabled: 1
     path: Assets/Scenes/Level/Level 1.unity
-    guid: e55478f14d6d7894b96ac8c8241950ad
+    guid: 3b8cb3a1e6108684d8e9b3431ba1ffa1
   - enabled: 1
     path: Assets/Scenes/Level/Level 2.unity
     guid: 6a1602fe103dedd438ef4092cb09ac6d

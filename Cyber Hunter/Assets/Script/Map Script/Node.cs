@@ -10,7 +10,6 @@ public class Node : MonoBehaviour
     public Color Hovercolor;
     public Color Okecolor;
     public LayerMask PathLayer;
-
     public bool SebelahPlayer = false;
     GameManager gameManager;
     [SerializeField] Path[] Paths;
@@ -96,6 +95,13 @@ public class Node : MonoBehaviour
                 gameManager.DiveNode = ThisNode;
                 if(ThisNode.NodeObject.name == "Finish")
                 {
+                    Node[] Nodes = FindObjectsOfType<Node>();
+
+                    foreach(Node node in Nodes)
+                    {
+                        Collider2D collider2D = node.GetComponent<Collider2D>();
+                        collider2D.enabled = false;
+                    }
                     gameManager.MiniGamesStart(0);
                 }
                 else
@@ -326,4 +332,6 @@ public class Node : MonoBehaviour
 
     }
 
+
+    
 }
