@@ -9,6 +9,7 @@ public class MiniGamesStart : MonoBehaviour
     public void SpawnMiniGames()
     {
         GameManager gameManager = FindObjectOfType<GameManager>().GetComponent<GameManager>();
+        gameManager.UI.SetActive(false);
         GameObject MinigamesObject = Instantiate(Minigames, gameManager.PlayerNode.transform);
         MinigamesObject.transform.parent = null;
     }

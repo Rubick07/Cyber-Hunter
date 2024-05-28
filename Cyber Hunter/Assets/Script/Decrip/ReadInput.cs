@@ -6,10 +6,11 @@ public class ReadInput : MonoBehaviour
 {
     private string input;
     Decri Jawaban;
-
+    MiniGames miniGames;
     private void Awake()
     {
         Jawaban = FindObjectOfType<Decri>();
+        miniGames = GetComponentInParent<MiniGames>();
     }
 
     public void ReadStringInput(string s)
@@ -25,10 +26,12 @@ public class ReadInput : MonoBehaviour
         {
             Debug.Log(input.ToUpper());
             Debug.Log("Kamu Benar");
+            StartCoroutine(miniGames.WinMinigames());
         }
         else
         {
             Debug.Log("Anjay salah");
+            
         }
     }
 

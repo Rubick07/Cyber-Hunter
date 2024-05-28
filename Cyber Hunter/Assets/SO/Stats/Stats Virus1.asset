@@ -15,5 +15,5 @@ MonoBehaviour:
   name: Virus 1
   description: 
   sprite: {fileID: 0}
-  HP: 40
+  HP: 20
   damage: 20

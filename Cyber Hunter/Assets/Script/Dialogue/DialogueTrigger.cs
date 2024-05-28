@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue[] dialogue;
-    public GameObject button;
+    //public GameObject button;
     int index = 0;
 
 
@@ -19,7 +19,8 @@ public class DialogueTrigger : MonoBehaviour
     public void TriggerDialogue()
     {
         //FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
-        DialogueManager.Instance.StartDialogue(dialogue[index]);
+        //Debug.Log(index);
+        DialogueManager.Instance.SimpenDialog(dialogue);
 
     }
 
@@ -28,12 +29,14 @@ public class DialogueTrigger : MonoBehaviour
     {
         if(index + 1 < dialogue.Length)
         {
+            Debug.Log(index + " " + dialogue.Length);
             index++;
             TriggerDialogue();
         }
         
         else
         {
+            Debug.Log(index + " hehe " + dialogue.Length);
             DialogueManager.Instance.TurnOffTxtBox();
             if(DialogueManager.Instance.NextScene == true) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             if(DialogueManager.Instance.StartGame == true)
@@ -44,7 +47,7 @@ public class DialogueTrigger : MonoBehaviour
                 DialogueManager.Instance.StartGame = false;
             }
 
-            if (button != null) button.SetActive(true);
+            //if (button != null) button.SetActive(true);
             
         }
 
@@ -53,6 +56,7 @@ public class DialogueTrigger : MonoBehaviour
     public void NewDialogue()
     {
         index = 0;
+        Debug.Log("index =" + index);
         TriggerDialogue();
     }
 

@@ -18,11 +18,13 @@ public class Node : MonoBehaviour
     private Node ThisNode;
     private List<Node> NodesYangLewat = new List<Node>();
     private Node NodePlayer;
+    private DialogueTrigger dialogueTrigger;
     private void Start()
     {
         gameManager = FindAnyObjectByType<GameManager>().GetComponent<GameManager>();
         ThisNode = GetComponent<Node>();
         rend = GetComponent<Renderer>();
+        dialogueTrigger = GetComponent<DialogueTrigger>();
         Startcolor = rend.material.color;
 
 
@@ -233,6 +235,12 @@ public class Node : MonoBehaviour
             Destroy(BuffObject.gameObject);
         }
 
+        if(dialogueTrigger != null)
+        {
+            dialogueTrigger.NewDialogue();
+            dialogueTrigger = null;
+        }
+
     }
 
 
@@ -247,7 +255,7 @@ public class Node : MonoBehaviour
         {
             if (CurrNode.NodeObject.GetComponent<Player>())
             {
-                Debug.Log(CurrNode + " Aku Player");
+                //Debug.Log(CurrNode + " Aku Player");
                 if(move < MinMove)
                 {
                     MinMove = move;
@@ -275,14 +283,14 @@ public class Node : MonoBehaviour
                         {
                         if (ThisNode != nodeInPath)
                         {
-                            Debug.Log("ThisNode adalah" + ThisNode + "dan NodePLayer adalah" + NodePlayer );
+                            //Debug.Log("ThisNode adalah" + ThisNode + "dan NodePLayer adalah" + NodePlayer );
                             NodePlayer = nodeInPath;
                         }
                         
 
                             
                             
-                            Debug.Log(NodePlayer);
+                            //Debug.Log(NodePlayer);
                             
                         
                             return true;
@@ -320,7 +328,7 @@ public class Node : MonoBehaviour
             }
             else if (NodePlayer.NodeObject == null)
             {
-                Debug.Log("Jalan");
+                //Debug.Log("Jalan");
                     NodePlayer.NodeObject = ThisNode.NodeObject;
                     ThisNode.NodeObject.transform.position = NodePlayer.gameObject.transform.position;
                     ThisNode.NodeObject = null;
@@ -330,7 +338,7 @@ public class Node : MonoBehaviour
         }
         else
         {
-            print("Kosong hehe");
+            //print("Kosong hehe");
         }
 
 

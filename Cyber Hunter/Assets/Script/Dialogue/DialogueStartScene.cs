@@ -5,12 +5,19 @@ using UnityEngine.UI;
 
 public class DialogueStartScene : MonoBehaviour
 {
-    public DialogueTrigger trigger;
+    private DialogueTrigger trigger;
     private void Start()
     {
-        trigger = FindObjectOfType<DialogueTrigger>();
-        trigger.NewDialogue();
+        trigger = GetComponent<DialogueTrigger>();
+        StartCoroutine(StartScene());
         
+    }
+
+    public IEnumerator StartScene()
+    {
+
+        yield return new WaitForSeconds(0.2f);
+        trigger.TriggerDialogue();
     }
 
 }

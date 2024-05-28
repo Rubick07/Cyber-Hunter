@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
 
     [Header("GameObjects")]
     public GameObject ActionMenu;
+    public GameObject UI;
     public GameObject StageClearUI;
     public GameObject StageLoseUI;
     public string Action;
@@ -68,6 +69,7 @@ public class GameManager : MonoBehaviour
         //Phase 1 = Milih Action
         else if(Phase == 1)
         {
+            UI.SetActive(true);
             ActionMenu.SetActive(true);
             Action = null;
         }

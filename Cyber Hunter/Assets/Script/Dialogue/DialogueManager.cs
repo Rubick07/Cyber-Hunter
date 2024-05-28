@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class DialogueManager : MonoBehaviour
@@ -15,9 +16,13 @@ public class DialogueManager : MonoBehaviour
     public static DialogueManager Instance;
     public delegate void NextDialogue();
     public NextDialogue DialogueSelanjutnyaPunyaManager;
+    [Header("Settings kelar dialog")]
     public bool NextScene;
     public bool StartGame;
+    public int index = 0;
+    public GameObject BackButton;
 
+    private Dialogue[] dialoguePunyaManajer;
 
     void Start()
     {
@@ -37,18 +42,23 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-
-    public void StartDialogue(Dialogue dialogue)
+    public void SimpenDialog(Dialogue[] dialogues)
+    {
+        dialoguePunyaManajer = dialogues;
+        StartDialogue();
+    }
+    public void StartDialogue()
     {
 
+
+        DialogueButton.enabled = true;
         DialogueButton.image.enabled = true;
-        //DialogueButton.enabled = true;
-        nameText.text = dialogue.name;
+        nameText.text = dialoguePunyaManajer[index].name;
         Character.enabled = true;
-        Character.sprite = dialogue.CharacterImage;
+        Character.sprite = dialoguePunyaManajer[index].CharacterImage;
         sentences.Clear();
 
-        foreach (string sentence in dialogue.sentences)
+        foreach (string sentence in dialoguePunyaManajer[index].sentences)
         {
             sentences.Enqueue(sentence);
         }
@@ -87,16 +97,40 @@ public class DialogueManager : MonoBehaviour
         Debug.Log("End Dialogue");
         StopAllCoroutines();
         //Character.color = new Color(255, 255, 255, 0.5f);
-        DialogueButton.image.enabled = false;
         DialogueText.text = "";
         nameText.text = "";
-        DialogueSelanjutnyaPunyaManager?.Invoke();
+        //DialogueSelanjutnyaPunyaManager?.Invoke();
+        if(index + 1 < dialoguePunyaManajer.Length)
+        {
+            index++;
+            StartDialogue();
+        }
+        else
+        {
+            //Debug.Log(index + " hehe " + dialogue.Length);
+            index = 0;
+            DialogueManager.Instance.TurnOffTxtBox();
+            if (DialogueManager.Instance.NextScene == true) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            if (DialogueManager.Instance.StartGame == true)
+            {
+                
+                GameManager gameManager = FindAnyObjectByType<GameManager>().GetComponent<GameManager>();
+                gameManager.enabled = true;
+                gameManager.ActionMenu.SetActive(true);
+                DialogueManager.Instance.StartGame = false;
+            }
+
+            if (BackButton != null) BackButton.SetActive(true);
+
+        }
+
 
     }
 
     public void TurnOffTxtBox()
     {
         Character.enabled = false;
+        DialogueButton.enabled = false;
         DialogueButton.image.enabled = false;
         DialogueText.text = "";
         nameText.text = "";
