@@ -47,10 +47,11 @@ MonoBehaviour:
   Phase: 0
   Turn: 0
   MaxTurn: 0
+  TurnText: {fileID: 0}
   DoubleTurn: 0
   ActionMenu: {fileID: 0}
-  MiniGamesFireWall: {fileID: 0}
-  MiniGamesFinish: {fileID: 959401174580488566, guid: fd10c151e3583544b8349fe679ef2b45, type: 3}
+  StageClearUI: {fileID: 6139363669884219651, guid: 77c2b96db8043f44f9252fa504ce45b4, type: 3}
+  StageLoseUI: {fileID: 2230052107138000226, guid: 935123ded1745ee4b820bbffce67c8b1, type: 3}
   Action: 
   PlayerNode: {fileID: 0}
   DiveNode: {fileID: 0}

@@ -71,7 +71,13 @@ public class Laser : MonoBehaviour
                     {
                         Debug.Log("menang");
                         MiniGames miniGames = FindAnyObjectByType<MiniGames>();
-                        StartCoroutine(miniGames.ClearStage());
+                        if (miniGames.ClearStageMiniGames == true)
+                        {
+                            Debug.Log("OKe");
+                            StartCoroutine(miniGames.ClearStage());
+                        }
+                        else StartCoroutine(miniGames.WinMinigames());
+                        
                     }
                     else
                     {

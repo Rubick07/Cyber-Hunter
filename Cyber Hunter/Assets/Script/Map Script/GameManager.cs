@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,19 +10,20 @@ public class GameManager : MonoBehaviour
     public int Phase = 0;
     public int Turn = 0;
     public int MaxTurn;
+    public TMP_Text TurnText;
     public bool DoubleTurn = false;
+
     [Header("GameObjects")]
     public GameObject ActionMenu;
-    public GameObject MiniGamesFireWall;
-    public GameObject MiniGamesFinish;
     public GameObject StageClearUI;
+    public GameObject StageLoseUI;
     public string Action;
     public Node PlayerNode;
     public Node DiveNode;
     [Header("Static")]
     public static GameManager Instance;
     int oke = 0;
-
+    int Kondisi = 0;
     void Start()
     {
         Phase = 0;
@@ -55,6 +58,11 @@ public class GameManager : MonoBehaviour
         //Phase 0 = check buff
         if(Phase == 0)
         {
+            if(Turn == MaxTurn)
+            {
+                StageLose();
+                return;
+            }
             Phase++;
         }
         //Phase 1 = Milih Action
@@ -147,22 +155,7 @@ public class GameManager : MonoBehaviour
         Phase = 0;
         oke = 0;
         Turn++;
-    }
-
-    public void MiniGamesStart(int tanda)
-    {
-        GameObject MinigamesGroup;
-        if(tanda == 0)
-        {
-           MinigamesGroup = Instantiate(MiniGamesFinish, PlayerNode.transform);
-           MinigamesGroup.transform.SetParent(null);
-        }
-        else if(tanda == 1)
-        {
-          MinigamesGroup =  Instantiate(MiniGamesFireWall, PlayerNode.transform);
-          MinigamesGroup.transform.SetParent(null);
-        }
-
+        TurnText.text = Turn.ToString();
     }
 
     public void ResetNode()
@@ -177,7 +170,22 @@ public class GameManager : MonoBehaviour
 
     public void StageClear()
     {
-        Instantiate(StageClearUI);
+        if(Kondisi == 0)
+        {
+            Instantiate(StageClearUI);
+            Kondisi = 1;
+        }
+        
+    }
+
+    public void StageLose()
+    {
+        if(Kondisi == 0)
+        {
+            Instantiate(StageLoseUI);
+            Kondisi = 1;
+        }
+
     }
 
 

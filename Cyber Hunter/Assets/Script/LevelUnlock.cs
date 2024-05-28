@@ -10,16 +10,16 @@ public class LevelUnlock : MonoBehaviour
 
     private void Start()
     {
-        PlayerPrefs.DeleteAll();
-        int levelAt = PlayerPrefs.GetInt("LevelAt", 2);
+        //PlayerPrefs.DeleteAll();
+        int levelAt = PlayerPrefs.GetInt("LevelAt", 1);
         Debug.Log(levelAt);
 
         for(int i = 0; i < Level.Length; i++)
         {
 
-            if(i + 2 > levelAt)
+            if(i < levelAt)
             {
-                Level[i].interactable = false;
+                Level[i].interactable = true;
             }
 
         }

@@ -15,6 +15,8 @@ public class DialogueManager : MonoBehaviour
     public static DialogueManager Instance;
     public delegate void NextDialogue();
     public NextDialogue DialogueSelanjutnyaPunyaManager;
+    public bool NextScene;
+    public bool StartGame;
 
 
     void Start()
@@ -42,6 +44,7 @@ public class DialogueManager : MonoBehaviour
         DialogueButton.image.enabled = true;
         //DialogueButton.enabled = true;
         nameText.text = dialogue.name;
+        Character.enabled = true;
         Character.sprite = dialogue.CharacterImage;
         sentences.Clear();
 
@@ -93,6 +96,7 @@ public class DialogueManager : MonoBehaviour
 
     public void TurnOffTxtBox()
     {
+        Character.enabled = false;
         DialogueButton.image.enabled = false;
         DialogueText.text = "";
         nameText.text = "";

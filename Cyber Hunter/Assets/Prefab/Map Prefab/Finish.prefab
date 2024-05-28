@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3806560373199015493}
   - component: {fileID: 1680515477037694241}
+  - component: {fileID: 6857585998559890940}
   m_Layer: 0
   m_Name: Finish
   m_TagString: DiveObject
@@ -84,3 +85,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6857585998559890940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8909253506198579582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a3e4b52cc2cef04a82836cbcd1c22cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Minigames: {fileID: 959401174580488566, guid: fd10c151e3583544b8349fe679ef2b45, type: 3}

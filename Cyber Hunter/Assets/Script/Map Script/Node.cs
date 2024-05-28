@@ -93,8 +93,7 @@ public class Node : MonoBehaviour
             else if(gameManager.Action == "Dive")
             {
                 gameManager.DiveNode = ThisNode;
-                if(ThisNode.NodeObject.name == "Finish")
-                {
+
                     Node[] Nodes = FindObjectsOfType<Node>();
 
                     foreach(Node node in Nodes)
@@ -102,12 +101,9 @@ public class Node : MonoBehaviour
                         Collider2D collider2D = node.GetComponent<Collider2D>();
                         collider2D.enabled = false;
                     }
-                    gameManager.MiniGamesStart(0);
-                }
-                else
-                {
+                    MiniGamesStart miniGames = ThisNode.NodeObject.GetComponent<MiniGamesStart>();
+                    miniGames.SpawnMiniGames();
 
-                }
 
             }
 
@@ -239,32 +235,31 @@ public class Node : MonoBehaviour
 
     }
 
-    
-    public bool EnemyMovement(Node CurrNode)
+
+    int MinMove = 99;
+    public bool EnemyMovement(Node CurrNode, int move)
     {
         NodesYangLewat.Add(CurrNode);
+        
         //Debug.Log("Saya rekursif");
-        Debug.Log(CurrNode);
+        //Debug.Log(CurrNode);
         if(CurrNode.NodeObject != null)
         {
             if (CurrNode.NodeObject.GetComponent<Player>())
             {
-
-                Debug.Log(CurrNode + "saya player");
-                return true;
+                Debug.Log(CurrNode + " Aku Player");
+                if(move < MinMove)
+                {
+                    MinMove = move;
+                    return true;
+                }
+                
             }
 
-        }
-        /*
-        if(CurrNode.NodeObject == null)
-        {
-            Debug.Log(CurrNode + "Isinya kosong");
-        }
-        */
-        
+        }        
            foreach(Path pathEach in CurrNode.Paths)
            {
-            Debug.Log(CurrNode + "" + pathEach);
+            //Debug.Log(CurrNode + "" + pathEach);
 
                 foreach (Node nodeInPath in pathEach.Nodes)
                 {                    
@@ -272,18 +267,24 @@ public class Node : MonoBehaviour
                     {
                         if (NodesYangLewat.Contains(nodeInPath))
                         {
-                        Debug.Log(CurrNode + "Block" + nodeInPath);
+                        //Debug.Log(CurrNode + "Block" + nodeInPath);
 
                         continue;
                         }
-                        else if(EnemyMovement(nodeInPath))
+                        else if(EnemyMovement(nodeInPath, move + 1))
                         {
-
-                            Debug.Log("iya");
+                        if (ThisNode != nodeInPath)
+                        {
+                            Debug.Log("ThisNode adalah" + ThisNode + "dan NodePLayer adalah" + NodePlayer );
                             NodePlayer = nodeInPath;
+                        }
+                        
+
+                            
+                            
                             Debug.Log(NodePlayer);
                             
-
+                        
                             return true;
                         }
 
@@ -299,12 +300,11 @@ public class Node : MonoBehaviour
 
     public void EnemyCariJalan()
     {
-
+        MinMove = 99;
         NodesYangLewat.Clear();               
         NodePlayer = null;
         //Debug.Log
-        EnemyMovement(ThisNode);
-        Debug.Log(NodePlayer);
+        EnemyMovement(ThisNode, 0);
         if(NodePlayer != null)
         {
             if(NodePlayer.NodeObject != null)
@@ -320,13 +320,17 @@ public class Node : MonoBehaviour
             }
             else if (NodePlayer.NodeObject == null)
             {
-
+                Debug.Log("Jalan");
                     NodePlayer.NodeObject = ThisNode.NodeObject;
                     ThisNode.NodeObject.transform.position = NodePlayer.gameObject.transform.position;
                     ThisNode.NodeObject = null;
                 
             }
 
+        }
+        else
+        {
+            print("Kosong hehe");
         }
 
 

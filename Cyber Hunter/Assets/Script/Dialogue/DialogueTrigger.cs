@@ -11,8 +11,9 @@ public class DialogueTrigger : MonoBehaviour
     int index = 0;
 
 
-    private void Awake()
+    private void Start()
     {
+
         DialogueManager.Instance.DialogueSelanjutnyaPunyaManager = DialogSelanjutnya;
     }
     public void TriggerDialogue()
@@ -21,6 +22,7 @@ public class DialogueTrigger : MonoBehaviour
         DialogueManager.Instance.StartDialogue(dialogue[index]);
 
     }
+
 
     public void DialogSelanjutnya()
     {
@@ -33,12 +35,17 @@ public class DialogueTrigger : MonoBehaviour
         else
         {
             DialogueManager.Instance.TurnOffTxtBox();
-            if(PlayerPrefs.GetInt("LevelAt") < SceneManager.GetActiveScene().buildIndex)
+            if(DialogueManager.Instance.NextScene == true) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            if(DialogueManager.Instance.StartGame == true)
             {
-                PlayerPrefs.SetInt("LevelAt", SceneManager.GetActiveScene().buildIndex);
-
-                button.SetActive(true);
+                GameManager gameManager = FindAnyObjectByType<GameManager>().GetComponent<GameManager>();
+                gameManager.enabled = true;
+                gameManager.ActionMenu.SetActive(true);
+                DialogueManager.Instance.StartGame = false;
             }
+
+            if (button != null) button.SetActive(true);
+            
         }
 
     }
