@@ -157,7 +157,8 @@ public class GameManager : MonoBehaviour
         Phase = 0;
         oke = 0;
         Turn++;
-        TurnText.text = Turn.ToString();
+        int sisaturn = MaxTurn - Turn;
+        TurnText.text = sisaturn.ToString();
     }
 
     public void ResetNode()

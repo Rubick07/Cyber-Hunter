@@ -176,7 +176,7 @@ MonoBehaviour:
     - "\u201CSuara derapan langkah kaki terdengar semakin kencang menyadarkan Edward
       dari tidurnya.\u201D"
   - name: Faye
-    CharacterImage: {fileID: -901029669, guid: f70bcbd184dd9f941a69c392be771af5, type: 3}
+    CharacterImage: {fileID: 21300000, guid: d3c25f762a4b898479fa1524ebc7f9db, type: 3}
     sentences:
     - "\u201CAkhirnya mulai terasa bahwa aku seorang cyber hunter\u201D"
   - name: Edward
@@ -184,7 +184,7 @@ MonoBehaviour:
     sentences:
     - "\u201CAda apa Faye?\u201D"
   - name: Faye
-    CharacterImage: {fileID: -901029669, guid: f70bcbd184dd9f941a69c392be771af5, type: 3}
+    CharacterImage: {fileID: 21300000, guid: d3c25f762a4b898479fa1524ebc7f9db, type: 3}
     sentences:
     - "\u201CLihat ini!!!\u201D"
   - name: Narrator
@@ -197,7 +197,7 @@ MonoBehaviour:
     sentences:
     - "\u201CBaguslah!!\u201D"
   - name: Faye
-    CharacterImage: {fileID: -901029669, guid: f70bcbd184dd9f941a69c392be771af5, type: 3}
+    CharacterImage: {fileID: 21300000, guid: d3c25f762a4b898479fa1524ebc7f9db, type: 3}
     sentences:
     - "\u201CDengan kerjasama kita, kita berhasil menangkap salah satu anggota dari
       fictus.\u201D"
@@ -206,7 +206,7 @@ MonoBehaviour:
     sentences:
     - "\u201CHaha, aku tidak mengira aku akan sebahagia ini.\u201D"
   - name: Faye
-    CharacterImage: {fileID: -901029669, guid: f70bcbd184dd9f941a69c392be771af5, type: 3}
+    CharacterImage: {fileID: 21300000, guid: d3c25f762a4b898479fa1524ebc7f9db, type: 3}
     sentences:
     - "\u201CAkupun juga.\u201D"
   - name: Edward
@@ -214,7 +214,7 @@ MonoBehaviour:
     sentences:
     - "\u201CTapi itu masih hanya salah satu dari semua anggota fictus.\u201D"
   - name: Faye
-    CharacterImage: {fileID: -901029669, guid: f70bcbd184dd9f941a69c392be771af5, type: 3}
+    CharacterImage: {fileID: 21300000, guid: d3c25f762a4b898479fa1524ebc7f9db, type: 3}
     sentences:
     - "\u201CYa, perjalanan kita menuju dunia siber yang ideal masih panjang\u2026\u201D"
   - name: Edward
@@ -223,7 +223,7 @@ MonoBehaviour:
     - "\u201CDiperlukan usaha dari semua pihak baik pengguna maupun penjaga untuk
       mempertahankan dunia yang indah ini.\u201D"
   - name: Faye
-    CharacterImage: {fileID: -901029669, guid: f70bcbd184dd9f941a69c392be771af5, type: 3}
+    CharacterImage: {fileID: 21300000, guid: d3c25f762a4b898479fa1524ebc7f9db, type: 3}
     sentences:
     - "\u201CKamu benar sekali, tapi aku yakin setiap usaha semua orang pasti akan
       membuahkan sebuah hasil untuk masa depan.\u201D"
@@ -233,7 +233,7 @@ MonoBehaviour:
     - "\u201CAku tidak bisa lebih setuju terhadap hal itu, karena kitalah pembuka
       jalan bagi masa depan."
   - name: Faye
-    CharacterImage: {fileID: -901029669, guid: f70bcbd184dd9f941a69c392be771af5, type: 3}
+    CharacterImage: {fileID: 21300000, guid: d3c25f762a4b898479fa1524ebc7f9db, type: 3}
     sentences:
     - "\u201CDengan kasus ini selesai\u2026\u201D"
     - "\u201CBagaimana kita kalau kita menikmati es krim?~\u201D"
@@ -520,8 +520,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 144.53828, y: -112.5}
-  m_SizeDelta: {x: 510.9233, y: 225}
+  m_AnchoredPosition: {x: 79.27217, y: -144.02101}
+  m_SizeDelta: {x: 641.4557, y: 161.958}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &506799660
 MonoBehaviour:
@@ -719,7 +719,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -18.12389, y: -35.446167}
+  m_AnchoredPosition: {x: -125, y: -90}
   m_SizeDelta: {x: 128.451, y: 35.6911}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &656272538
@@ -769,14 +769,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28
-  m_fontSizeBase: 28
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -805,7 +805,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -8.165005, y: 8.979695, z: -11.987614, w: 12.583669}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1498,7 +1498,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 5.49411, y: 15.383401, z: -140.28665, w: -57.36724}
+  m_margin: {x: -58.18448, y: 20.013758, z: -202.33377, w: -32.18896}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1590,7 +1590,7 @@ Transform:
   m_GameObject: {fileID: 2109667767}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.85, y: -2.68, z: 0}
+  m_LocalPosition: {x: -7.06, y: -3.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

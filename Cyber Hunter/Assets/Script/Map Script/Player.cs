@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     GameManager gameManager;
     public Stats stats;
+    public HealthBar health;
     int HP;
     int MaxHp;
     int damage;
@@ -13,13 +14,15 @@ public class Player : MonoBehaviour
     void Start()
     {
         gameManager = FindAnyObjectByType<GameManager>().GetComponent<GameManager>();
-
+        
     }
     private void Awake()
     {
         HP = stats.HP;
         MaxHp = HP;
         damage = stats.damage;
+        health.SetMaxHealth(MaxHp);
+
     }
 
     // Update is called once per frame
@@ -35,7 +38,9 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        
         HP -= damage;
+        health.SetHealth(HP);
     }
 
     public void TakeHeal(int heal)

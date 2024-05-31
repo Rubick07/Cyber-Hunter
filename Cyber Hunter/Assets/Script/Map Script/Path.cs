@@ -9,9 +9,10 @@ public class Path : MonoBehaviour
     public Transform Point1;
     public Transform Point2;
 
-
+    Collider2D collider2D;
     private void Start()
     {
+        collider2D = GetComponent<Collider2D>();
         //Cek ujung path untuk mencari Node
         Collider2D[] Collidernode1 = Physics2D.OverlapCircleAll(Point1.position, 0.1f, NodeLayer);
         Collider2D[] Collidernode2 = Physics2D.OverlapCircleAll(Point2.position, 0.1f, NodeLayer);
@@ -24,9 +25,16 @@ public class Path : MonoBehaviour
         Nodes[0] = Node1;
         Nodes[1] = Node2;
 
+        StartCoroutine(stopCollider());
+        
     }
 
+    public IEnumerator stopCollider()
+    {
 
+        yield return new WaitForSeconds(1f);
+        collider2D.enabled = false;
+    }
 
     private void OnDrawGizmos()
     {

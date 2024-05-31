@@ -318,8 +318,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 144.53828, y: -112.5}
-  m_SizeDelta: {x: 510.9233, y: 225}
+  m_AnchoredPosition: {x: 79.27217, y: -144.02101}
+  m_SizeDelta: {x: 641.4557, y: 161.958}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &416985381
 GameObject:
@@ -449,7 +449,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 10.53746, y: 11.495373, z: -135.52493, w: -53.845222}
+  m_margin: {x: -51.509396, y: 20.756098, z: -197.57187, w: -34.3977}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -891,7 +891,7 @@ Transform:
   m_GameObject: {fileID: 1386722200}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.85, y: -2.68, z: 0}
+  m_LocalPosition: {x: -7.06, y: -3.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -989,7 +989,7 @@ MonoBehaviour:
     sentences:
     - "\u201CEdward terkaget dan menoleh\u201D"
   - name: Faye
-    CharacterImage: {fileID: -901029669, guid: f70bcbd184dd9f941a69c392be771af5, type: 3}
+    CharacterImage: {fileID: 21300000, guid: d3c25f762a4b898479fa1524ebc7f9db, type: 3}
     sentences:
     - "\u201CHmm~, tidak salah lagi. Kamu pasti Edward kan?\u201D"
   - name: Edward
@@ -997,7 +997,7 @@ MonoBehaviour:
     sentences:
     - "\u201CYa benar, aku Edward, anda siapa ya kak?\u201D"
   - name: Faye
-    CharacterImage: {fileID: -901029669, guid: f70bcbd184dd9f941a69c392be771af5, type: 3}
+    CharacterImage: {fileID: 21300000, guid: d3c25f762a4b898479fa1524ebc7f9db, type: 3}
     sentences:
     - "\u201CAh salam kenal, aku Faye asisten lab yang akan menjadi rekanmu\u201D"
   - name: Edward
@@ -1005,7 +1005,7 @@ MonoBehaviour:
     sentences:
     - "\u201CSalam kenal kak Faye\u201D"
   - name: Faye
-    CharacterImage: {fileID: -901029669, guid: f70bcbd184dd9f941a69c392be771af5, type: 3}
+    CharacterImage: {fileID: 21300000, guid: d3c25f762a4b898479fa1524ebc7f9db, type: 3}
     sentences:
     - "\u201CTidak usah terlalu formal, aku juga masih di umur yang sama denganmu.\u201D"
   - name: Edward
@@ -1014,7 +1014,7 @@ MonoBehaviour:
     - "\u201CAh baiklah kalau begitu, jujur kamu terlihat sangat berpengalaman di
       bidang ini aku kira kamu sudah lama bekerja di sini."
   - name: Faye
-    CharacterImage: {fileID: -901029669, guid: f70bcbd184dd9f941a69c392be771af5, type: 3}
+    CharacterImage: {fileID: 21300000, guid: d3c25f762a4b898479fa1524ebc7f9db, type: 3}
     sentences:
     - "\u201CTerima kasih banyak hihihi, tapi ini pun juga tahun pertamaku sama sepertimu.\u201D"
   - name: Edward
@@ -1022,11 +1022,11 @@ MonoBehaviour:
     sentences:
     - "\u201CHaha, baiklah aku akan mengandalkanmu untuk kedepannya Faye.\u201D"
   - name: Faye
-    CharacterImage: {fileID: -901029669, guid: f70bcbd184dd9f941a69c392be771af5, type: 3}
+    CharacterImage: {fileID: 21300000, guid: d3c25f762a4b898479fa1524ebc7f9db, type: 3}
     sentences:
     - "\u201CAku akan mengandalkanmu juga Edward.\u201D "
   - name: Faye
-    CharacterImage: {fileID: -901029669, guid: f70bcbd184dd9f941a69c392be771af5, type: 3}
+    CharacterImage: {fileID: 21300000, guid: d3c25f762a4b898479fa1524ebc7f9db, type: 3}
     sentences:
     - "\u201CTapi sebelum kita memulai misi kita bersama, mari kita melakukan tes
       terlebih dahulu.\u201D"
@@ -1040,7 +1040,7 @@ MonoBehaviour:
     - "\u201CEdward pun mengenakan virtual diver dan mempersiapkan diri untuk memasuki
       dunia virtual.\u201D"
   - name: Faye
-    CharacterImage: {fileID: -901029669, guid: f70bcbd184dd9f941a69c392be771af5, type: 3}
+    CharacterImage: {fileID: 21300000, guid: d3c25f762a4b898479fa1524ebc7f9db, type: 3}
     sentences:
     - "\u201CApakah kamu sudah siap?\u201D"
   - name: Edward
@@ -1048,7 +1048,7 @@ MonoBehaviour:
     sentences:
     - "\u201CSiap Faye\u201D"
   - name: Faye
-    CharacterImage: {fileID: -901029669, guid: f70bcbd184dd9f941a69c392be771af5, type: 3}
+    CharacterImage: {fileID: 21300000, guid: d3c25f762a4b898479fa1524ebc7f9db, type: 3}
     sentences:
     - "\u201CKalau begitu ayo kita mulai!\u201D"
 --- !u!114 &1607763195
@@ -1160,7 +1160,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -18.12389, y: -35.446167}
+  m_AnchoredPosition: {x: -129, y: -92}
   m_SizeDelta: {x: 128.451, y: 35.6911}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1768135097
@@ -1218,14 +1218,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28
-  m_fontSizeBase: 28
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1254,7 +1254,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -7.13163, y: 2.4882507, z: -16.959251, w: 12.17738}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

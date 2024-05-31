@@ -19,6 +19,7 @@ public class DialogueManager : MonoBehaviour
     [Header("Settings kelar dialog")]
     public bool NextScene;
     public bool StartGame;
+    //public bool StartMiniGames;
     public int index = 0;
     public GameObject BackButton;
 
@@ -31,10 +32,10 @@ public class DialogueManager : MonoBehaviour
 
     private void Awake()
     {
-        if(Instance == null)
+        if (Instance == null)
         {
             Instance = this;
-            
+
         }
         else
         {
@@ -81,17 +82,17 @@ public class DialogueManager : MonoBehaviour
         //DialogueText.text = sentence;
 
     }
-    
+
     IEnumerator TypeSentences(string sentence)
     {
         DialogueText.text = "";
-        foreach(char letter in sentence.ToCharArray())
+        foreach (char letter in sentence.ToCharArray())
         {
             DialogueText.text += letter;
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSeconds(0.03f);
         }
     }
-    
+
     public void EndDialogue()
     {
         Debug.Log("End Dialogue");
@@ -100,7 +101,7 @@ public class DialogueManager : MonoBehaviour
         DialogueText.text = "";
         nameText.text = "";
         //DialogueSelanjutnyaPunyaManager?.Invoke();
-        if(index + 1 < dialoguePunyaManajer.Length)
+        if (index + 1 < dialoguePunyaManajer.Length)
         {
             index++;
             StartDialogue();
@@ -113,7 +114,7 @@ public class DialogueManager : MonoBehaviour
             if (DialogueManager.Instance.NextScene == true) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             if (DialogueManager.Instance.StartGame == true)
             {
-                
+
                 GameManager gameManager = FindAnyObjectByType<GameManager>().GetComponent<GameManager>();
                 gameManager.enabled = true;
                 gameManager.ActionMenu.SetActive(true);
@@ -137,5 +138,5 @@ public class DialogueManager : MonoBehaviour
     }
 
 
-        
+
 }

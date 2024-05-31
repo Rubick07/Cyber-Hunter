@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class ReadInput : MonoBehaviour
 {
     private string input;
+    public TMP_Text TandaSalah;
     Decri Jawaban;
     MiniGames miniGames;
     private void Awake()
@@ -26,10 +29,12 @@ public class ReadInput : MonoBehaviour
         {
             Debug.Log(input.ToUpper());
             Debug.Log("Kamu Benar");
+            TandaSalah.text = "BENAR";
             StartCoroutine(miniGames.WinMinigames());
         }
         else
         {
+            TandaSalah.text = "SALAH";
             Debug.Log("Anjay salah");
             
         }

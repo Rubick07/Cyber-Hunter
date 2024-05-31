@@ -103,8 +103,21 @@ public class Node : MonoBehaviour
                         Collider2D collider2D = node.GetComponent<Collider2D>();
                         collider2D.enabled = false;
                     }
-                    MiniGamesStart miniGames = ThisNode.NodeObject.GetComponent<MiniGamesStart>();
-                    miniGames.SpawnMiniGames();
+                    if(ThisNode.NodeObject != null)
+                    {
+                        if (ThisNode.NodeObject.GetComponent<MiniGamesStart>())
+                        {
+                        MiniGamesStart miniGames = ThisNode.NodeObject.GetComponent<MiniGamesStart>();
+                        miniGames.SpawnMiniGames();
+                        }
+                        
+                    }
+                    else
+                    {
+                    Debug.Log("Nothing Happen");
+                    gameManager.Phase--;
+                }
+
 
 
             }
