@@ -1,6 +1,6 @@
 ![ozMQSe](https://github.com/user-attachments/assets/45b5daaf-2908-4df8-8dd6-bdd9d5bb87b6)
 
-# Drink Drink Drink
+# Cyber Hunter
 
 - Last Updated: Juni 1, 2024
 - Developed by: Nais Ingfo
