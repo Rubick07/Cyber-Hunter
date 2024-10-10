@@ -11,6 +11,8 @@ Welcome to the Cyber Hunter Association Team! Your job as a cyber hunter is to p
 ## Features
 -
   
+## How to Play
+- 
 
 ## Technologies Used
 - Engine: Unity
@@ -18,19 +20,18 @@ Welcome to the Cyber Hunter Association Team! Your job as a cyber hunter is to p
 - Graphic: Photoshop
 - Sound BGM: Band Lab
 
-## How to Play
-- 
 
 ## Installation
 - Download the game from keen-fm itch.io page https://keen-fm.itch.io/cyber-hunter
 - Extract files to desired directory
 - Run the game
 
-## Feedback and Bug Reports
-You can rate and comment about the game in the game page. Any feedback is really appreciated.
-- https://keen-fm.itch.io/cyber-hunter
-
 ## Contributions
 - Game Programmer: Evan Jonathan
 - Game Designer: Vincent Pho Wijaya
 - Game Artist: Keen Felo Matheus
+
+## Feedback and Bug Reports
+You can rate and comment about the game in the game page. Any feedback is really appreciated.
+- https://keen-fm.itch.io/cyber-hunter
+
