@@ -9,8 +9,10 @@
 Welcome to the Cyber Hunter Association Team! Your job as a cyber hunter is to protect our digital users from any vicious bugs and clear out any phishing sources through any means necessary. 
 
 ## Features
-- Light Tracer Minigames
 - Decryption Minigames
+- Light Tracer Minigames
+- Turn based exploration system
+- Power up
   
 ## How to Play
 - Select: Left Mouse Click
